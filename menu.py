@@ -5,7 +5,7 @@ def CheckValidation(num):
     :return: true if valid. otherwise return false.
     """
     if not num.isdigit():
-        print("Invalid input - not a natural number")
+        print("Invalid input - not a digit")
         return False
     elif int(num) < 1 or int(num) > 5:
         print("Invalid input - number out of range")
@@ -62,6 +62,30 @@ def GetValidNum():
         is_num = is_number(num)
     return is_num
 
+def Call_Math_func(num1, num2, choice):
+    """
+
+    :param num1: first num
+    :param num2:  second num
+    :param choice: the chosen mathematical operation
+    :return: the result of the operation
+    """
+    result = 0
+    match choice:
+        case "1":
+            result = Add(num1, num2)
+        # case "2":
+        #     result = Sub(num1, num2)
+        # case "3":
+        #     result = Mul(num1, num2)
+        # case "4":
+        #     result = Div(num1, num2)
+        # case "5":
+        #     result = Pow(num1, num2)
+    return result
+
+def Add(num1, num2):
+    return num1 + num2
 
 def main():
     # present menu instructions
@@ -73,12 +97,14 @@ def main():
     # check the validation of the input
     check = CheckValidation(num)
     while not check:
-        num = input("Please choose an option:")
+        num = input("Please choose an option: ")
         check = CheckValidation(num)
-    # get 2 numbers from user
+    #get 2 numbers from user
     num1 = GetValidNum()
     num2 = GetValidNum()
-
+    #get result
+    result = Call_Math_func(num1,num2,num)
+    print(f"The result is: {result} ")
 
 if __name__ == '__main__':
     main()
