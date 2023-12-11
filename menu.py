@@ -76,8 +76,8 @@ def Call_Math_func(num1, num2, choice):
             result = Add(num1, num2)
         case "2":
              result = Sub(num1, num2)
-        # case "3":
-        #     result = Mul(num1, num2)
+        case "3":
+             result = Mul(num1, num2)
         # case "4":
         #     result = Div(num1, num2)
         # case "5":
@@ -88,6 +88,8 @@ def Add(num1, num2):
     return num1 + num2
 def Sub(num1, num2):
     return num1 - num2
+def Mul(num1, num2):
+    return num1 * num2
 
 def main():
     # present menu instructions
