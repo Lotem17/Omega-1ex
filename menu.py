@@ -56,7 +56,7 @@ def GetValidNum():
     num = input("Please enter a number: ")
     #check if number
     is_num = is_number(num)
-    while not is_num:
+    while num != "0" and not is_num:
         print("Invalid input - not a number")
         num = input("Please enter a number: ")
         is_num = is_number(num)
@@ -78,8 +78,8 @@ def Call_Math_func(num1, num2, choice):
              result = Sub(num1, num2)
         case "3":
              result = Mul(num1, num2)
-        # case "4":
-        #     result = Div(num1, num2)
+        case "4":
+             result = Div(num1, num2)
         # case "5":
         #     result = Pow(num1, num2)
     return result
@@ -90,6 +90,11 @@ def Sub(num1, num2):
     return num1 - num2
 def Mul(num1, num2):
     return num1 * num2
+def Div(num1, num2):
+    try:
+        return num1 / num2
+    except:
+        print("Division by zero")
 
 def main():
     # present menu instructions
