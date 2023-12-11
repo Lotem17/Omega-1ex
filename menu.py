@@ -80,8 +80,8 @@ def Call_Math_func(num1, num2, choice):
              result = Mul(num1, num2)
         case "4":
              result = Div(num1, num2)
-        # case "5":
-        #     result = Pow(num1, num2)
+        case "5":
+             result = Pow(num1, num2)
     return result
 
 def Add(num1, num2):
@@ -95,7 +95,8 @@ def Div(num1, num2):
         return num1 / num2
     except:
         print("Division by zero")
-
+def Pow(num1, num2):
+    return num1 ** num2
 def main():
     # present menu instructions
     print("Hello there!")
